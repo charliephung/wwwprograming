@@ -1,0 +1,92 @@
+<% include ../partials/header-sub %>
+
+    <div class="container-fluid">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="row contain-huge">
+                <div id="picture">
+                    <img src="/<%= food.src %>" alt="">
+                    <h2 class="display-img-name">
+                        <%= food.name %>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <% if(!currentUser) { %>
+                <hr>
+                <p style="text-align: center;">Login to comment</p>
+                <hr>
+            <% } else { %>
+            <div class="row">
+                <hr>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <form action="/foods/<%= food._id %>/comments" method="POST" class="comments">
+                    <textarea class="form-control"  id="input${1/(\w+)/\u\1/g}" rows="2" cols="4" type="text" name="comments[text]" required="required"> </textarea>
+                    <button id="btn-submit" class="btn btn-success" type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+            
+                
+            <% } %>
+            <% food.comments.forEach(function(comment) { %>
+                <div class="col-sm-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>
+                                <%= comment.author.username %>
+                            </strong>
+                            <span class="text-muted">
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                    <form id="delete-form" action="/foods/<%= food._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                        <button class="btn btn-xs btn-danger">
+                                            delete
+                                        </button>
+                                    </form>
+                                    <% } %>
+                            </span>
+                        </div>
+                        <div class="panel-body">
+                            <%= comment.text %>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+                                <!-- <div class="contain">
+                                    <% if(!currentUser) { %>
+                                        <hr>
+                                        <p style="text-align: center;">Login to comment</p>
+                                        <hr>
+                                        <% } else { %>
+                                            <form action="/foods/<%= food._id %>/comments" method="POST" class="comments">
+                                                <textarea id="textarea" type="text" name="comments[text]" required> </textarea>
+                                                <button id="btn-submit" class="btn" type="submit">Add</button>
+                                            </form>
+                                            <% } %>
+
+                                                <% food.comments.forEach(function(comment) { %>
+                                                    <div class="comments">
+                                                        <h4>
+                                                            <%= comment.author.username %>:</h4>
+                                                        <p>
+                                                            <%= comment.text %>
+                                                        </p>
+                                                        <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                                            <form id="delete-form" action="/foods/<%= food._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                                                <button class="btn btn-delete">
+                                                                    <p>delete</p>
+                                                                </button>
+                                                            </form>
+                                                            <% } %>
+                                                    </div>
+                                                    <% }); %>
+                                </div> -->
+        </div>
+    </div>
+
+
+    </body>
+
+    </html>

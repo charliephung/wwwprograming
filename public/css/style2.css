@@ -1,0 +1,153 @@
+body {
+    background-color: rgba(224, 224, 224, 0.85);
+}
+
+/* header */
+
+.head {
+    background-color: rgba(255, 255, 255, 0.89);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo-black {
+    height: 8rem;
+}
+
+.navbar.navbar-default {
+    height: 8rem;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.container-big {
+    min-width: 120rem;
+}
+
+.thumbnail {
+    padding: 0px;
+}
+
+.panel {
+    position: relative;
+}
+
+.panel>.panel-heading:after,
+.panel>.panel-heading:before {
+    position: absolute;
+    top: 11px;
+    left: -16px;
+    right: 100%;
+    width: 0;
+    height: 0;
+    display: block;
+    content: " ";
+    border-color: transparent;
+    border-style: solid solid outset;
+    pointer-events: none;
+}
+
+.panel>.panel-heading:after {
+    border-width: 7px;
+    border-right-color: #f7f7f7;
+    margin-top: 1px;
+    margin-left: 2px;
+}
+
+.panel>.panel-heading:before {
+    border-right-color: #ddd;
+    border-width: 8px;
+}
+
+#delete-form {
+    height: 1rem;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+#picture {
+    padding: 2rem;
+}
+
+#btn-submit {
+    margin-top: .5rem;
+}
+
+#form {
+    position: relative;
+}
+#form h1 {
+    color: #BA55D3;
+}
+
+#login-form {
+    width: 50rem;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.btn--purple {
+    background-color: #BA55D3;
+    color: white;
+}
+
+.btn--purple:hover {
+    background-color: rgb(206, 111, 230);
+    color: white;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    font-size: 80%;
+}
+
+#footer ul {
+    list-style: none;
+    color: white;
+}
+
+#footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+#footer i {
+    font-size: 2.5rem;
+}
+
+#footer ul a {
+    color: lightgray;
+    font-size: 1.5rem;
+}
+
+#footer p {
+    color: #888;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-left: 24rem;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+.mail:hover, .mail:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+.hided {
+    visibility: hidden;
+}

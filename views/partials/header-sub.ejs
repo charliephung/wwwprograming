@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>OnniFood Comment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="the comment about the food.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href="/css/ionicons.min.css" >
+
+    <link rel="stylesheet" type="text/css" href="/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/foods">
+                    <img src="/img/logo.png" alt="Ommifood logo" class="logo-black">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <% if(!currentUser) { %>
+                        <li>
+                            <a href="/login">Login</a>
+                        </li>
+                        <li>
+                            <a href="/register">Sign up </a>
+                        </li>
+                        <% } else { %>
+                            <li>
+                                <a hef="#">Greeting
+                                    <%= currentUser.username %>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">Logout</a>
+                            </li>
+                            <% } %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+    </nav>
+    </div>
+
+    <div class="container">
+        <% if(message && message.length) {  %>
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>
+                    <%= message %>!</strong>
+            </div>
+            <% }   %>
+           
+   </div>
